@@ -3,31 +3,29 @@
     <table class="table table-hover">
         <thead class="thead">
             <tr>
+                <th scope="col">Job ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Date</th>
-                <th scope="col">Employee Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">Employee First Name</th>
+                <th scope="col">Employee Last Name</th>
                 <th scope="col">Employee Email</th>
                 <th scope="col">Employee ID</th>
                 <th scope="col">Employee Phone</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">Job 1</th>
-                <td>30/09/2020</td>
-                <td>Fest, Lest</td>
-                <td>fest@test.com</td>
-                <td>001</td>
-                <td>(987) 123-4567</td>
+            <tr *ngFor="let job of jobsViewModel">
+                <th scope="row">{{ job.id }}</th>
+                <td>{{ job.title }}</td>
+                <td>{{ job.date }}</td>
+                <td>{{ job.time }}</td>
+                <td>{{ job.empFirstName }}</td>
+                <td>{{ job.empLastName }}</td>
+                <td>{{ job.empEmail }}</td>
+                <td>{{ job.empId }}</td>
+                <td>{{ job.empPhone }}</td>
             </tr>
-            <tr>
-                <th scope="row">Job 2</th>
-                <td>30/10/2020</td>
-                <td>Fest, Lest</td>
-                <td>fest@test.com</td>
-                <td>001</td>
-                <td>(987) 123-4567</td>
-            </tr>            
         </tbody>
     </table>
 </div>
