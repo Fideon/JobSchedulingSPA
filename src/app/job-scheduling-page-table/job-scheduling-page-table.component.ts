@@ -10,6 +10,7 @@ export class JobSchedulingPageTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
