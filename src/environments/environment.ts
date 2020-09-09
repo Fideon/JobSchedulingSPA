@@ -3,8 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDsteUFGUQ3nfmWPHyMBAWT1pwQQT-_pAY",
+    authDomain: "jobschedulerspa.firebaseapp.com",
+    databaseURL: "https://jobschedulerspa.firebaseio.com",
+    projectId: "jobschedulerspa",
+    storageBucket: "jobschedulerspa.appspot.com",
+    messagingSenderId: "469679545983",
+    appId: "1:469679545983:web:a56a8a15d1caf2a866694a"
+    }
+  };
 
 /*
  * For easier debugging in development mode, you can import the following file
