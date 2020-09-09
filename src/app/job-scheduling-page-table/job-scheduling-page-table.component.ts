@@ -1,16 +1,57 @@
 import { Component, OnInit } from '@angular/core';
+import { JobsService } from './../jobs-service.service'
+import { Job } from '../job.model';
+import { JobView } from '../job-view.model';
+import * as moment from 'moment';
 
 @Component({
-  selector: 'app-job-scheduling-page-table',
-  templateUrl: './job-scheduling-page-table.component.html',
-  styleUrls: ['./job-scheduling-page-table.component.scss']
+	selector: 'app-job-scheduling-page-table',
+	templateUrl: './job-scheduling-page-table.component.html',
+	styleUrls: ['./job-scheduling-page-table.component.scss']
 })
 export class JobSchedulingPageTableComponent implements OnInit {
 
-  constructor() { }
+	constructor(private jobsService: JobsService) { }
 
-  ngOnInit(): void {
-    
-  }
+	jobs: Job[];
+	jobsViewModel: JobView[];
 
+	ngOnInit(): void {
+		this.jobsService.getJobs().subscribe(
+			(result) => {
+				this.jobs = result.map((e) => {
+					return {
+						id: e.payload.doc.id,
+						...e.payload.doc.data() as Job
+					}					
+				})				
+				this.mapResultToViewModel()
+			}
+		);		
+	}
+
+	mapResultToViewModel() {
+		this.jobsViewModel = this.jobs.map((e) => {
+			return {
+				id: e.id,
+				title: e.title,
+				date: moment(new Date(e.date.seconds * 1000)).format('L'),
+				time: moment(new Date(e.date.seconds * 1000)).format('LTS'),
+				empFirstName: e.empFirstName,
+				empLastName: e.empLastName,
+				empEmail: e.empEmail,
+				empId: e.empId,
+				empPhone: this.formatPhoneNumber(e.empPhone)				
+			}
+		})
+	}
+
+	formatPhoneNumber(number: number) {
+		var cleaned = ('' + number).replace(/\D/g, '')
+  		var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+  		if (match) {
+    		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+  		}
+  		return null
+	}
 }
