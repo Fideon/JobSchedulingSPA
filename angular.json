@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"              
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "JobSchedulingSPA"
+    }
+  },
+  "defaultProject": "JobSchedulingSPA",
+  "cli": {
+    "analytics": "b62d2c16-361f-4232-bf69-7d5b9b80839c"
+  }
 }

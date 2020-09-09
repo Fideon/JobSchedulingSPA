@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { JobSchedulingPageComponent } from './job-scheduling-page/job-scheduling-page.component';
+import { JobSchedulingPageTableComponent } from './job-scheduling-page-table/job-scheduling-page-table.component';
+import { JobSchedulingPageAddnewComponent } from './job-scheduling-page-addnew/job-scheduling-page-addnew.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JobSchedulingPageComponent,
+    JobSchedulingPageTableComponent,
+    JobSchedulingPageAddnewComponent
   ],
   imports: [
     BrowserModule,
