@@ -4,7 +4,7 @@
 <form #form name="form">
     <label class="lead" for="id">Job Title</label>
     <div class="input-group mb-3">
-        <input #title [ngClass]="{'is-invalid': titleError}" type="text" class="form-control" id="title" aria-describedby="basic-addon3" placeholder="Title">
+        <input #title required [ngClass]="{'is-invalid': titleError}" type="text" class="form-control" id="title" aria-describedby="basic-addon3" placeholder="Title">
     </div>
 
     <label class="lead">Job Date</label>
@@ -65,7 +65,7 @@
 
     <label class="lead" for="email">Employee ID</label>
     <div class="input-group mb-3">
-        <input #empId type="text" [ngClass]="{'is-invalid': empIdError}" class="form-control" id="empId" mask="0000" aria-describedby="basic-addon3" placeholder="ID">
+        <input #empId required type="text" [ngClass]="{'is-invalid': empIdError}" class="form-control" id="empId" mask="0000" aria-describedby="basic-addon3" placeholder="ID">
     </div>
 
     <label class="lead" for="email">Employee Phone</label>
