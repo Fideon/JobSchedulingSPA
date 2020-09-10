@@ -16,10 +16,19 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask'
 
-export let options: Partial<IConfig> | (() => Partial<IConfig>);
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+    dayGridPlugin,
+    interactionPlugin
+  ]);
+  
 
 @NgModule({
   declarations: [
@@ -42,6 +51,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     MatFormFieldModule,
     MatMomentDateModule,
     NgxMaskModule.forRoot(),
+    FullCalendarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
