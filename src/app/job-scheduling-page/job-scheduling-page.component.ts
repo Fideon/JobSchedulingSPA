@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { JobSchedulingPageAddnewComponent } from '../job-scheduling-page-addnew/job-scheduling-page-addnew.component';
-
+import { JobsService } from './../jobs-service.service'
 
 @Component({
 	selector: 'app-job-scheduling-page',
@@ -10,15 +10,20 @@ import { JobSchedulingPageAddnewComponent } from '../job-scheduling-page-addnew/
 })
 export class JobSchedulingPageComponent implements OnInit {
 
-	constructor(public dialog: MatDialog) { }
+	constructor(public dialog: MatDialog, private jobsService: JobsService) { }
 
 	ngOnInit(): void {
 	}
 
 	openAddNewDialog() {
-		const addNewDialog = this.dialog.open(JobSchedulingPageAddnewComponent, {
-			width: '350px',
-			height: '820px'
-		});
+        if (this.jobsService.jobsCount < 10) {
+		    const addNewDialog = this.dialog.open(JobSchedulingPageAddnewComponent, {
+		    	width: '350px',
+		    	height: '750px'
+            });
+        }
+        else {
+            alert("Maximum number of jobs reached (10). Delete a job to add more.");
+        }
 	}
 }

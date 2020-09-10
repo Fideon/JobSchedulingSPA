@@ -1,7 +1,7 @@
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 export class Job {
-    id: number;
+    id: string;
     title: string;
     date = new timeStamp();
     empFirstName: string;

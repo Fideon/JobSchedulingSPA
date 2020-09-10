@@ -1,7 +1,7 @@
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 export class JobView {
-    id: number;
+    id: string;
     title: string;
     date: string;
     time: string;

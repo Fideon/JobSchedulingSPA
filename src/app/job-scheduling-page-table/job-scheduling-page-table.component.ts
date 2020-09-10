@@ -3,6 +3,8 @@ import { JobsService } from './../jobs-service.service'
 import { Job } from '../job.model';
 import { JobView } from '../job-view.model';
 import * as moment from 'moment';
+import { MatDialog } from '@angular/material/dialog';
+import { JobSchedulingPageAddnewComponent } from '../job-scheduling-page-addnew/job-scheduling-page-addnew.component';
 
 @Component({
 	selector: 'app-job-scheduling-page-table',
@@ -11,10 +13,10 @@ import * as moment from 'moment';
 })
 export class JobSchedulingPageTableComponent implements OnInit {
 
-	constructor(private jobsService: JobsService) { }
+	constructor(public dialog: MatDialog, private jobsService: JobsService) { }
 
 	jobs: Job[];
-	jobsViewModel: JobView[];
+    jobsViewModel: JobView[];
 
 	ngOnInit(): void {
 		this.jobsService.getJobs().subscribe(
@@ -25,7 +27,8 @@ export class JobSchedulingPageTableComponent implements OnInit {
 						...e.payload.doc.data() as Job
 					}					
 				})				
-				this.mapResultToViewModel()
+                this.mapResultToViewModel();
+                this.jobsService.jobsCount = this.jobs.length;
 			}
 		);		
 	}
@@ -44,7 +47,19 @@ export class JobSchedulingPageTableComponent implements OnInit {
 				empPhone: this.formatPhoneNumber(e.empPhone)				
 			}
 		})
-	}
+    }
+
+    editJob(job: Job) {
+        const addNewDialog = this.dialog.open(JobSchedulingPageAddnewComponent, {
+            width: '350px',
+		    height: '750px',
+            data: job
+        });
+    }
+    
+    deleteJob(jobId: number) {
+        this.jobsService.deleteJob(jobId);
+    }
 
 	formatPhoneNumber(number: number) {
 		var cleaned = ('' + number).replace(/\D/g, '')
