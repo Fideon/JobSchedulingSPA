@@ -1,11 +1,15 @@
 <div class="col-lg-12">
     <br>
+    <div class="jumbotron">
+        <h1 class="display-6">Jobs</h1>
+        <hr class="my-4">
+    </div>
     <button class="btn btn-primary" (click)="openAddNewDialog()">Add New</button>
     <br>
     <app-job-scheduling-page-table></app-job-scheduling-page-table>
 
     <div class="card">
-        <full-calendar  [options]="calendarOptions"></full-calendar>
+        <full-calendar [options]="calendarOptions"></full-calendar>
     </div>
 
 </div>

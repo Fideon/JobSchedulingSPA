@@ -56,16 +56,15 @@ export class JobSchedulingPageAddnewComponent implements OnInit, AfterViewInit {
 
         job = this.mapJobValues(job)
 
-        if (this.data) {            
-            await this.jobsService.updateJob((JSON.parse(JSON.stringify(job))));
-            this.onClose()
-        }
-        else {
-            this.validateForm();
-            if (!this.titleError && !this.empIdError && !this.emailError) {
-                await this.jobsService.createJob((JSON.parse(JSON.stringify(job))));
-                this.onClose()
+        this.validateForm();
+        if (!this.titleError && !this.empIdError && !this.emailError) {
+            if (this.data) {   
+                await this.jobsService.updateJob((JSON.parse(JSON.stringify(job))));
             }
+            else {
+                await this.jobsService.createJob((JSON.parse(JSON.stringify(job))));
+            }
+            this.onClose()
         }
     }
 
@@ -97,8 +96,8 @@ export class JobSchedulingPageAddnewComponent implements OnInit, AfterViewInit {
     }
 
     validateForm() {
-        this.titleError = this.title.nativeElement.value == "";
-        this.empIdError = this.empId.nativeElement.value == "";
-        this.emailError = this.email.nativeElement.value == "";
+        this.titleError = !this.title.nativeElement.validity.valid;
+        this.empIdError = !this.empId.nativeElement.validity.valid;
+        this.emailError = !this.email.nativeElement.validity.valid;
     }
 }

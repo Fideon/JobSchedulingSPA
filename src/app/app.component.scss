@@ -2,6 +2,8 @@
     background-color: #6699ff;
     overflow: auto;
     width: 100%;
+    position: sticky;
+    top: 0px
 }
 
 .toolbar a {
@@ -10,4 +12,9 @@
     text-align: center;
     padding: 14px 16px;
     font-size: 20px;
+}
+
+.img {
+    float: right;
+    height: 50px;
 }

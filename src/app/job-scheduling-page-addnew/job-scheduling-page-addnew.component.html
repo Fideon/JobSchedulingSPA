@@ -4,12 +4,12 @@
 <form #form name="form">
     <label class="lead" for="id">Job Title</label>
     <div class="input-group mb-3">
-        <input #title [ngClass]="{'is-invalid': titleError}" required type="text" class="form-control" id="title" aria-describedby="basic-addon3" placeholder="Title">
+        <input #title [ngClass]="{'is-invalid': titleError}" type="text" class="form-control" id="title" aria-describedby="basic-addon3" placeholder="Title">
     </div>
 
     <label class="lead">Job Date</label>
     <div class="input-group mb-3">
-        <input #date required class="form-control" id="date" mask="00/00/0000" matInput [matDatepicker]="picker">
+        <input #date class="form-control" id="date" mask="00/00/0000" matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
         <mat-datepicker #picker ></mat-datepicker>    
     </div>
@@ -52,25 +52,25 @@
 
     <label class="lead" for="firstName">Employee Name</label>
     <div class="input-group mb-3">
-        <input #firstName required type="text" class="form-control" id="first-name" aria-describedby="basic-addon3" placeholder="First Name">
+        <input #firstName type="text" class="form-control" id="first-name" aria-describedby="basic-addon3" placeholder="First Name">
     </div>
     <div class="input-group mb-3">
-        <input #lastName required type="text" class="form-control" id="last-name" aria-describedby="basic-addon3" placeholder="Last Name">
+        <input #lastName type="text" class="form-control" id="last-name" aria-describedby="basic-addon3" placeholder="Last Name">
     </div>
 
     <label class="lead" for="email">Employee Email</label>
     <div class="input-group mb-3">
-        <input #email required type="email" [ngClass]="{'is-invalid': emailError}" pattern="email" class="form-control" id="email" aria-describedby="basic-addon3" placeholder="Email">
+        <input #email type="email" [ngClass]="{'is-invalid': emailError}" class="form-control" id="email" aria-describedby="basic-addon3" placeholder="Email">
     </div>
 
     <label class="lead" for="email">Employee ID</label>
     <div class="input-group mb-3">
-        <input #empId required type="text" [ngClass]="{'is-invalid': empIdError}" class="form-control" id="empId" mask="0000" aria-describedby="basic-addon3" placeholder="ID">
+        <input #empId type="text" [ngClass]="{'is-invalid': empIdError}" class="form-control" id="empId" mask="0000" aria-describedby="basic-addon3" placeholder="ID">
     </div>
 
     <label class="lead" for="email">Employee Phone</label>
     <div class="input-group mb-3">
-        <input #phone required type="text" pattern="tel" class="form-control" id="phone" mask="(000) 000-0000" aria-describedby="basic-addon3" placeholder="Phone #">
+        <input #phone type="text" pattern="tel" class="form-control" id="phone" mask="(000) 000-0000" aria-describedby="basic-addon3" placeholder="Phone #">
     </div>
 </form>
 

@@ -50,7 +50,7 @@ export class JobSchedulingPageTableComponent implements OnInit {
     }
 
     editJob(job: Job) {
-        const addNewDialog = this.dialog.open(JobSchedulingPageAddnewComponent, {
+        this.dialog.open(JobSchedulingPageAddnewComponent, {
             width: '350px',
 		    height: '750px',
             data: job
