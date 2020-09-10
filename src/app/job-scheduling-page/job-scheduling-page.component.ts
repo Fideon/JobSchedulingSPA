@@ -17,8 +17,8 @@ export class JobSchedulingPageComponent implements OnInit {
 
 	openAddNewDialog() {
 		const addNewDialog = this.dialog.open(JobSchedulingPageAddnewComponent, {
-			width: '300px',
-			height: '750px'
+			width: '350px',
+			height: '820px'
 		});
 	}
 }

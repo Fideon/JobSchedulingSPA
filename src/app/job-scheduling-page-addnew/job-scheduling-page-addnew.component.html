@@ -1,20 +1,26 @@
-<h1 class="display-4">{{ title }}</h1>
+<h1 class="display-4">{{ pageTitle }}</h1>
 <br>
+
 <label class="lead" for="id">Job ID</label>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="id" aria-describedby="basic-addon3" placeholder="ID">
+    <input #id type="text" class="form-control" id="id" mask="000000" aria-describedby="basic-addon3" placeholder="ID">
+</div>
+
+<label class="lead" for="id">Job Title</label>
+<div class="input-group mb-3">
+    <input #title type="text" class="form-control" id="title" aria-describedby="basic-addon3" placeholder="Title">
 </div>
 
 <label class="lead">Job Date</label>
 <div class="input-group mb-3">
-    <input class="form-control" id="date" matInput [matDatepicker]="picker">
+    <input #date class="form-control" id="date" matInput [matDatepicker]="picker">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>    
 </div>
 
 <label class="lead">Job Time</label>
 <div class="input-group mb-3">
-    <select class="form-control" id="timeHH">
+    <select #timeHH class="form-control" id="timeHH">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -28,7 +34,7 @@
         <option>11</option>
         <option>12</option>
       </select>      
-      <select class="form-control" id="timeMM">
+      <select #timeMM class="form-control" id="timeMM">
         <option>00</option>
         <option>05</option>
         <option>10</option>
@@ -42,7 +48,7 @@
         <option>50</option>
         <option>55</option>
       </select>
-      <select class="form-control" id="timeAMPM">
+      <select #timeAMPM class="form-control" id="timeAMPM">
         <option>AM</option>
         <option>PM</option>
       </select>
@@ -50,25 +56,25 @@
 
 <label class="lead" for="firstName">Employee Name</label>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="first-name" aria-describedby="basic-addon3" placeholder="First Name">
+    <input #firstName type="text" class="form-control" id="first-name" aria-describedby="basic-addon3" placeholder="First Name">
 </div>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="last-name" aria-describedby="basic-addon3" placeholder="Last Name">
+    <input #lastName type="text" class="form-control" id="last-name" aria-describedby="basic-addon3" placeholder="Last Name">
 </div>
 
 <label class="lead" for="email">Employee Email</label>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="email" aria-describedby="basic-addon3" placeholder="Email">
+    <input #email type="text" class="form-control" id="email" aria-describedby="basic-addon3" placeholder="Email">
 </div>
 
 <label class="lead" for="email">Employee ID</label>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="empId" aria-describedby="basic-addon3" placeholder="ID">
+    <input #empId type="text" class="form-control" id="empId" mask="0000" aria-describedby="basic-addon3" placeholder="ID">
 </div>
 
 <label class="lead" for="email">Employee Phone</label>
 <div class="input-group mb-3">
-    <input type="text" class="form-control" id="phone" mask="(000) 000-0000" aria-describedby="basic-addon3" placeholder="Phone #">
+    <input #phone type="text" class="form-control" id="phone" mask="(000) 000-0000" aria-describedby="basic-addon3" placeholder="Phone #">
 </div>
 
 <button type="button" class="btn btn-danger" (click)="onClose()">Close</button>
