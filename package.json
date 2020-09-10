@@ -26,6 +26,7 @@
     "angularjs-bootstrap-datetimepicker": "^1.1.4",
     "bootstrap": "^5.0.0-alpha1",
     "firebase": "^7.19.1",
+    "guid-typescript": "^1.0.9",
     "jquery": "^3.5.1",
     "moment": "^2.27.0",
     "ngx-mask": "^10.0.1",
