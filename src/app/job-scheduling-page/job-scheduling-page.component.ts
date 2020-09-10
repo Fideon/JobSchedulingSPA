@@ -47,7 +47,7 @@ export class JobSchedulingPageComponent implements OnInit {
             });
         }
         else {
-            this.snackBar.open("Maximum number of jobs reached (10)!")
+            this.snackBar.open("Maximum number of jobs reached (10) !", "Ok");
         }
     }
     

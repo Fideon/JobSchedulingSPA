@@ -1,5 +1,3 @@
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-
 export class Job {
     id: string;
     title: string;
