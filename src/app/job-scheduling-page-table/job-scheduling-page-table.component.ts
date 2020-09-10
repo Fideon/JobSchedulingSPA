@@ -58,7 +58,9 @@ export class JobSchedulingPageTableComponent implements OnInit {
     }
     
     deleteJob(jobId: number) {
-        this.jobsService.deleteJob(jobId);
+        if(confirm("Are you sure you wish to delete this job?")) {
+            this.jobsService.deleteJob(jobId);
+          }
     }
 
 	formatPhoneNumber(number: number) {

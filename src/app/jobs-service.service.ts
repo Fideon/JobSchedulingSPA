@@ -21,7 +21,6 @@ export class JobsService {
   }
 
   updateJob(job: Job){
-    // delete job.id;
     this.firestore.doc('jobs/' + job.id).update(job);
   }
 
