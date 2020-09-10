@@ -1,1 +1,75 @@
-<p>job-scheduling-page-addnew works!</p>
+<h1 class="display-4">{{ title }}</h1>
+<br>
+<label class="lead" for="id">Job ID</label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="id" aria-describedby="basic-addon3" placeholder="ID">
+</div>
+
+<label class="lead">Job Date</label>
+<div class="input-group mb-3">
+    <input class="form-control" id="date" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>    
+</div>
+
+<label class="lead">Job Time</label>
+<div class="input-group mb-3">
+    <select class="form-control" id="timeHH">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>      
+      <select class="form-control" id="timeMM">
+        <option>00</option>
+        <option>05</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>25</option>
+        <option>30</option>
+        <option>35</option>
+        <option>40</option>
+        <option>45</option>
+        <option>50</option>
+        <option>55</option>
+      </select>
+      <select class="form-control" id="timeAMPM">
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+</div>
+
+<label class="lead" for="firstName">Employee Name</label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="first-name" aria-describedby="basic-addon3" placeholder="First Name">
+</div>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="last-name" aria-describedby="basic-addon3" placeholder="Last Name">
+</div>
+
+<label class="lead" for="email">Employee Email</label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="email" aria-describedby="basic-addon3" placeholder="Email">
+</div>
+
+<label class="lead" for="email">Employee ID</label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="empId" aria-describedby="basic-addon3" placeholder="ID">
+</div>
+
+<label class="lead" for="email">Employee Phone</label>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="phone" mask="(000) 000-0000" aria-describedby="basic-addon3" placeholder="Phone #">
+</div>
+
+<button type="button" class="btn btn-danger" (click)="onClose()">Close</button>
+<button type="button" class="btn btn-success" (click)="onSave()">Save</button>
